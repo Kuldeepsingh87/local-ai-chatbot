@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Local AI Chatbot Dashboard</title>
+
+<style>
+
+/* Background */
+body{
+font-family: Arial;
+background: linear-gradient(135deg,#667eea,#764ba2);
+margin:0;
+padding:0;
+text-align:center;
+}
+
+/* Title */
+h1{
+color:white;
+margin-top:30px;
+}
+
+/* Menu Buttons */
+.menu{
+margin-top:30px;
+}
+
+.menu button{
+padding:12px 20px;
+margin:10px;
+border:none;
+border-radius:6px;
+background:white;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
+}
+
+.menu button:hover{
+background:#333;
+color:white;
+transform:scale(1.1);
+}
+
+/* Section Form */
+.section{
+display:none;
+background:white;
+width:400px;
+margin:30px auto;
+padding:20px;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+text-align:left;
+}
+
+input,select,textarea{
+width:100%;
+padding:8px;
+margin:8px 0;
+}
+
+button.submit{
+background:#667eea;
+color:white;
+width:100%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Local AI Chatbot Dashboard</h1>
+
+<div class="menu">
+
+<button onclick="showSection('shop')">Shop</button>
+<button onclick="showSection('hospital')">Hospital</button>
+<button onclick="showSection('bank')">Bank</button>
+<button onclick="showSection('office')">Government Office</button>
+
+</div>
+
+<!-- SHOP -->
+<div id="shop" class="section">
+
+<h2>Add Shop</h2>
+
+<label>Shop Name</label>
+<input type="text">
+
+<label>Owner Name</label>
+<input type="text">
+
+<label>Opening Time</label>
+<input type="time">
+
+<label>Closing Time</label>
+<input type="time">
+
+<button class="submit">Add Shop</button>
+
+</div>
+
+<!-- HOSPITAL -->
+<div id="hospital" class="section">
+
+<h2>Add Hospital</h2>
+
+<label>Hospital Name</label>
+<input type="text">
+
+<label>Doctor Name</label>
+<input type="text">
+
+<label>Emergency</label>
+<select>
+<option>Yes</option>
+<option>No</option>
+</select>
+
+<button class="submit">Add Hospital</button>
+
+</div>
+
+<!-- BANK -->
+<div id="bank" class="section">
+
+<h2>Add Bank</h2>
+
+<label>Bank Name</label>
+<input type="text">
+
+<label>Branch</label>
+<input type="text">
+
+<label>IFSC</label>
+<input type="text">
+
+<button class="submit">Add Bank</button>
+
+</div>
+
+<!-- OFFICE -->
+<div id="office" class="section">
+
+<h2>Add Government Office</h2>
+
+<label>Office Name</label>
+<input type="text">
+
+<label>Department</label>
+<input type="text">
+
+<label>Opening Time</label>
+<input type="time">
+
+<button class="submit">Add Office</button>
+
+</div>
+
+<script>
+
+function showSection(id){
+
+let sections=document.querySelectorAll('.section');
+
+sections.forEach(section=>{
+section.style.display="none";
+});
+
+document.getElementById(id).style.display="block";
+
+}
+
+</script>
+
+</body>
+
+</html>
